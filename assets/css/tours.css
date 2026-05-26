@@ -269,6 +269,12 @@
    TRIPEX PREMIUM TEAM SECTION UI
 ========================================= */
 
+.tripex-team-page {
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
 /* Decorative Shapes */
 .tripex-team-page::before,
 .tripex-team-page::after {
