@@ -43,45 +43,61 @@
           <ul>
             <li class="nav-label">Main Menu</li>
             <li>
-              <a href="#" class="active"
+              <a href="#dashboard" class="active"
                 ><i class="fas fa-th-large"></i> Dashboard</a
               >
             </li>
 
             <!-- Role Based Items -->
             <li class="role-item" data-role="user">
-              <a href="#"><i class="fas fa-suitcase"></i> My Bookings</a>
+              <a href="#my-bookings"
+                ><i class="fas fa-suitcase"></i> My Bookings</a
+              >
             </li>
             <li class="role-item" data-role="user">
-              <a href="#"><i class="fas fa-heart"></i> Saved Tours</a>
+              <a href="#saved-tours"
+                ><i class="fas fa-heart"></i> Saved Tours</a
+              >
             </li>
 
             <li class="role-item" data-role="guide">
-              <a href="#"
+              <a href="#assigned-tours"
                 ><i class="fas fa-map-marked-alt"></i> Assigned Tours</a
               >
             </li>
             <li class="role-item" data-role="guide">
-              <a href="#"><i class="fas fa-users"></i> Travelers List</a>
+              <a href="#travelers-list"
+                ><i class="fas fa-users"></i> Travelers List</a
+              >
             </li>
 
             <li class="role-item" data-role="agency">
-              <a href="#"><i class="fas fa-plus-circle"></i> Create Tour</a>
+              <a href="#create-tour"
+                ><i class="fas fa-plus-circle"></i> Create Tour</a
+              >
             </li>
             <li class="role-item" data-role="agency">
-              <a href="#"><i class="fas fa-chart-line"></i> Sales Analytics</a>
+              <a href="#sales-analytics"
+                ><i class="fas fa-chart-line"></i> Sales Analytics</a
+              >
             </li>
 
             <li class="role-item" data-role="admin">
-              <a href="#"><i class="fas fa-user-shield"></i> User Management</a>
+              <a href="#user-management"
+                ><i class="fas fa-user-shield"></i> User Management</a
+              >
             </li>
             <li class="role-item" data-role="admin">
-              <a href="#"><i class="fas fa-cog"></i> System Settings</a>
+              <a href="#system-settings"
+                ><i class="fas fa-cog"></i> System Settings</a
+              >
             </li>
 
             <li class="nav-label">Account</li>
             <li>
-              <a href="#"><i class="fas fa-user-edit"></i> Edit Profile</a>
+              <a href="#edit-profile"
+                ><i class="fas fa-user-edit"></i> Edit Profile</a
+              >
             </li>
             <li>
               <a href="#" id="logout-btn" class="text-danger"
@@ -94,44 +110,660 @@
 
       <!-- Main Content -->
       <main class="dashboard-content">
-        <header class="content-header">
-          <h2>Welcome back, <span id="welcome-email">Explorer</span>!</h2>
-          <p>
-            Here is what's happening with your
-            <span class="text-primary fw-bold" id="role-text">Account</span>
-            today.
-          </p>
-        </header>
+        <!-- 1. Dashboard Home -->
+        <section id="dashboard" class="content-section">
+          <header class="content-header">
+            <h2>Welcome back, <span id="welcome-email">Explorer</span>!</h2>
+            <p>
+              Overview of your
+              <span class="text-primary fw-bold" id="role-text">Account</span>
+              metrics.
+            </p>
+          </header>
+          <div class="row g-4 mt-2">
+            <div class="col-md-4">
+              <div class="stat-card">
+                <div class="icon"><i class="fas fa-ticket-alt"></i></div>
+                <div class="details">
+                  <h3>12</h3>
+                  <p>Active Trips</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="stat-card">
+                <div class="icon bg-orange"><i class="fas fa-wallet"></i></div>
+                <div class="details">
+                  <h3>$1,240</h3>
+                  <p>Total Spent</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="stat-card">
+                <div class="icon bg-dark"><i class="fas fa-star"></i></div>
+                <div class="details">
+                  <h3>4.9</h3>
+                  <p>User Rating</p>
+                </div>
+              </div>
+            </div>
+            <!-- New: Quick Stats -->
+            <div class="col-md-6">
+              <div class="dashboard-card">
+                <h5 class="fw-bold mb-3">Upcoming Trip</h5>
+                <div class="d-flex align-items-center gap-3">
+                  <img
+                    src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=80&h=80&q=80"
+                    alt="Trip"
+                    class="rounded-3"
+                    style="width: 80px; height: 80px; object-fit: cover"
+                  />
+                  <div>
+                    <h6 class="mb-1">Amalfi Coast Adventure</h6>
+                    <p class="small text-muted mb-0">
+                      <i class="fas fa-calendar-alt me-1"></i> June 15 - June
+                      22, 2025
+                    </p>
+                    <p class="small text-muted mb-0">
+                      <i class="fas fa-map-marker-alt me-1"></i> Italy
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="mt-3 d-flex justify-content-between align-items-center"
+                >
+                  <span class="badge bg-primary">7 Days Left</span>
+                  <a href="#my-bookings" class="text-orange small fw-bold"
+                    >View Details <i class="fas fa-arrow-right ms-1"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="dashboard-card">
+                <h5 class="fw-bold mb-3">Recent Activity</h5>
+                <ul class="list-unstyled mb-0">
+                  <li class="d-flex align-items-center mb-2">
+                    <i class="fas fa-check-circle text-success me-2"></i>
+                    <span class="small text-muted"
+                      >Booked "Bali Escape" on May 20, 2025</span
+                    >
+                  </li>
+                  <li class="d-flex align-items-center mb-2">
+                    <i class="fas fa-heart text-danger me-2"></i>
+                    <span class="small text-muted"
+                      >Added "Swiss Alps Trek" to wishlist</span
+                    >
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <i class="fas fa-star text-warning me-2"></i>
+                    <span class="small text-muted"
+                      >Reviewed "Amazon Rainforest" tour</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
 
-        <div class="row g-4 mt-2">
-          <div class="col-md-4">
-            <div class="stat-card">
-              <div class="icon"><i class="fas fa-ticket-alt"></i></div>
-              <div class="details">
-                <h3>12</h3>
-                <p>Active Trips</p>
+        <!-- 2. My Bookings (User) -->
+        <section id="my-bookings" class="content-section" style="display: none">
+          <header class="content-header mb-4">
+            <h2>My Bookings</h2>
+            <p>Manage your upcoming and past travel reservations.</p>
+          </header>
+          <div class="dashboard-card p-0 overflow-hidden">
+            <table class="dashboard-table w-100">
+              <thead>
+                <tr>
+                  <th>Trip Name</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th>Price</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Amalfi Coast Journey</td>
+                  <td>24 May 2025</td>
+                  <td><span class="badge bg-success">Confirmed</span></td>
+                  <td>$1,200</td>
+                  <td>
+                    <button class="btn btn-sm theme-btn style-one">
+                      View Details
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Bali Diamond Beach</td>
+                  <td>15 June 2025</td>
+                  <td><span class="badge bg-warning">Pending</span></td>
+                  <td>$850</td>
+                  <td>
+                    <button class="btn btn-sm theme-btn style-one">
+                      View Details
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Swiss Alps Trek</td>
+                  <td>01 Aug 2024</td>
+                  <td><span class="badge bg-secondary">Completed</span></td>
+                  <td>$1,500</td>
+                  <td>
+                    <button class="btn btn-sm theme-btn style-one">
+                      View Details
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- 3. Saved Tours (User) -->
+        <section id="saved-tours" class="content-section" style="display: none">
+          <header class="content-header mb-4">
+            <h2>Saved Tours</h2>
+            <p>Your wishlist of adventures around the world.</p>
+          </header>
+          <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+              <div class="tripex-tour-item">
+                <div class="thumbnail">
+                  <img
+                    src="https://images.unsplash.com/photo-1502784444187-359ac186c5bb?auto=format&fit=crop&w=400&q=80"
+                    alt="Switzerland Alps"
+                  />
+                  <div class="duration">7 Days</div>
+                </div>
+                <div class="content-wrap">
+                  <h4 class="title"><a href="#">Switzerland Alps Trek</a></h4>
+                  <span class="location"
+                    ><i class="fas fa-map-marker-alt"></i>Switzerland</span
+                  >
+                  <p>
+                    Experience the majestic beauty of the Swiss Alps with
+                    breathtaking views.
+                  </p>
+                  <div class="tour-footer">
+                    <a href="#" class="theme-btn style-one"
+                      >View Tour <i class="fas fa-arrow-right"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="tripex-tour-item">
+                <div class="thumbnail">
+                  <img
+                    src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80"
+                    alt="Tropical Beach"
+                  />
+                  <div class="duration">5 Days</div>
+                </div>
+                <div class="content-wrap">
+                  <h4 class="title"><a href="#">Tropical Beach Escape</a></h4>
+                  <span class="location"
+                    ><i class="fas fa-map-marker-alt"></i>Maldives</span
+                  >
+                  <p>
+                    Relax on pristine white sands and swim in crystal-clear
+                    turquoise waters.
+                  </p>
+                  <div class="tour-footer">
+                    <a href="#" class="theme-btn style-one"
+                      >View Tour <i class="fas fa-arrow-right"></i
+                    ></a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="stat-card">
-              <div class="icon bg-orange"><i class="fas fa-wallet"></i></div>
-              <div class="details">
-                <h3>$1,240</h3>
-                <p>Total Spent</p>
+        </section>
+
+        <!-- 4. Assigned Tours (Guide) -->
+        <section
+          id="assigned-tours"
+          class="content-section"
+          style="display: none"
+        >
+          <header class="content-header mb-4">
+            <h2>Assigned Tours</h2>
+            <p>View the schedules for trips you are leading.</p>
+          </header>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="dashboard-card p-4">
+                <h5 class="fw-bold mb-3">Himalayan Base Camp Expedition</h5>
+                <p class="small text-muted mb-2">
+                  <i class="fas fa-calendar-alt me-1"></i> 12-20 June 2025
+                </p>
+                <p class="small text-muted mb-2">
+                  <i class="fas fa-users me-1"></i> 15 Travelers
+                </p>
+                <div class="progress mt-3" style="height: 8px">
+                  <div
+                    class="progress-bar bg-primary"
+                    role="progressbar"
+                    style="width: 60%"
+                    aria-valuenow="60"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+                <p class="small text-muted mt-2 mb-0">60% Complete</p>
+                <a
+                  href="#travelers-list"
+                  class="text-orange small fw-bold mt-3 d-inline-block"
+                  >View Travelers <i class="fas fa-arrow-right ms-1"></i
+                ></a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="dashboard-card p-4">
+                <h5 class="fw-bold mb-3">Amazon Rainforest Discovery</h5>
+                <p class="small text-muted mb-2">
+                  <i class="fas fa-calendar-alt me-1"></i> 01-07 July 2025
+                </p>
+                <p class="small text-muted mb-2">
+                  <i class="fas fa-users me-1"></i> 8 Travelers
+                </p>
+                <div class="progress mt-3" style="height: 8px">
+                  <div
+                    class="progress-bar bg-warning"
+                    role="progressbar"
+                    style="width: 20%"
+                    aria-valuenow="20"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+                <p class="small text-muted mt-2 mb-0">20% Complete</p>
+                <a
+                  href="#travelers-list"
+                  class="text-orange small fw-bold mt-3 d-inline-block"
+                  >View Travelers <i class="fas fa-arrow-right ms-1"></i
+                ></a>
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="stat-card">
-              <div class="icon bg-dark"><i class="fas fa-star"></i></div>
-              <div class="details">
-                <h3>4.9</h3>
-                <p>User Rating</p>
+        </section>
+
+        <!-- 5. Travelers List (Guide) -->
+        <section
+          id="travelers-list"
+          class="content-section"
+          style="display: none"
+        >
+          <header class="content-header mb-4">
+            <h2>Travelers List</h2>
+            <p>Contact details and information for your tour participants.</p>
+          </header>
+          <div class="dashboard-card p-0 overflow-hidden">
+            <table class="dashboard-table w-100">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Trip</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Alice Walker</td>
+                  <td>alice@mail.com</td>
+                  <td>Himalayan Base Camp</td>
+                  <td>
+                    <button class="btn btn-sm theme-btn style-one">
+                      View Profile
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Brian Cooper</td>
+                  <td>brian@mail.com</td>
+                  <td>Himalayan Base Camp</td>
+                  <td>
+                    <button class="btn btn-sm theme-btn style-one">
+                      View Profile
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Carol White</td>
+                  <td>carol@mail.com</td>
+                  <td>Amazon Rainforest</td>
+                  <td>
+                    <button class="btn btn-sm theme-btn style-one">
+                      View Profile
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- 6. Create Tour (Agency) -->
+        <section id="create-tour" class="content-section" style="display: none">
+          <header class="content-header mb-4">
+            <h2>Create New Tour</h2>
+            <p>Fill in the details to list a new package on the platform.</p>
+          </header>
+          <div class="dashboard-card p-4">
+            <form class="row g-3">
+              <div class="col-md-6">
+                <label for="tourTitle" class="form-label small fw-bold"
+                  >Tour Title</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="tourTitle"
+                  placeholder="e.g., European Grand Tour"
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="basePrice" class="form-label small fw-bold"
+                  >Base Price ($)</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="basePrice"
+                  placeholder="e.g., 1200"
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="tourDuration" class="form-label small fw-bold"
+                  >Duration (Days)</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="tourDuration"
+                  placeholder="e.g., 7"
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="tourLocation" class="form-label small fw-bold"
+                  >Location</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="tourLocation"
+                  placeholder="e.g., Paris, France"
+                />
+              </div>
+              <div class="col-12">
+                <label for="tourDescription" class="form-label small fw-bold"
+                  >Tour Description</label
+                >
+                <textarea
+                  class="form-control"
+                  id="tourDescription"
+                  placeholder="Provide a detailed description of the tour..."
+                  rows="4"
+                ></textarea>
+              </div>
+              <div class="col-md-6">
+                <label for="tourImage" class="form-label small fw-bold"
+                  >Tour Image</label
+                >
+                <input class="form-control" type="file" id="tourImage" />
+              </div>
+              <div class="col-md-6">
+                <label for="tourDifficulty" class="form-label small fw-bold"
+                  >Difficulty Level</label
+                >
+                <select class="form-select" id="tourDifficulty">
+                  <option selected>Choose...</option>
+                  <option value="easy">Easy</option>
+                  <option value="medium">Medium</option>
+                  <option value="hard">Hard</option>
+                </select>
+              </div>
+              <div class="col-12 mt-4">
+                <button type="submit" class="theme-btn style-one">
+                  Publish Tour
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <!-- 7. Sales Analytics (Agency) -->
+        <section
+          id="sales-analytics"
+          class="content-section"
+          style="display: none"
+        >
+          <header class="content-header mb-4">
+            <h2>Sales Analytics</h2>
+            <p>Track your agency's revenue and performance.</p>
+          </header>
+          <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+              <div class="stat-card">
+                <div class="icon"><i class="fas fa-dollar-sign"></i></div>
+                <div class="details">
+                  <h3>$42,500</h3>
+                  <p>Total Revenue</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <div class="stat-card">
+                <div class="icon bg-orange"><i class="fas fa-globe"></i></div>
+                <div class="details">
+                  <h3>128</h3>
+                  <p>Tours Sold</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <div class="stat-card">
+                <div class="icon bg-dark"><i class="fas fa-users"></i></div>
+                <div class="details">
+                  <h3>500+</h3>
+                  <p>New Customers</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <div class="stat-card">
+                <div class="icon bg-primary">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="details">
+                  <h3>+15%</h3>
+                  <p>Growth (YoY)</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="dashboard-card p-4">
+                <h5 class="fw-bold mb-3">Revenue Trend (Last 6 Months)</h5>
+                <div class="text-center text-muted py-5">
+                  <i class="fas fa-chart-area fa-3x mb-3"></i>
+                  <p>Placeholder for a beautiful chart (e.g., Chart.js)</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
+
+        <!-- 8. User Management (Admin) -->
+        <section
+          id="user-management"
+          class="content-section"
+          style="display: none"
+        >
+          <header class="content-header mb-4">
+            <h2>User Management</h2>
+            <p>Monitor system users, roles, and account statuses.</p>
+          </header>
+          <div class="dashboard-card p-0 overflow-hidden">
+            <table class="dashboard-table w-100">
+              <thead>
+                <tr>
+                  <th>User</th>
+                  <th>Role</th>
+                  <th>Status</th>
+                  <th>Last Login</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>john.doe@gmail.com</td>
+                  <td>Traveler</td>
+                  <td><span class="badge bg-success">Active</span></td>
+                  <td>2025-05-25</td>
+                  <td>
+                    <button class="btn btn-sm theme-btn style-one">Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>agency_one@stackly.com</td>
+                  <td>Agency</td>
+                  <td><span class="badge bg-success">Active</span></td>
+                  <td>2025-05-24</td>
+                  <td>
+                    <button class="btn btn-sm theme-btn style-one">Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>guide_mike@stackly.com</td>
+                  <td>Guide</td>
+                  <td><span class="badge bg-warning">Inactive</span></td>
+                  <td>2025-05-10</td>
+                  <td>
+                    <button class="btn btn-sm theme-btn style-one">Edit</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>admin@stackly.com</td>
+                  <td>Admin</td>
+                  <td><span class="badge bg-success">Active</span></td>
+                  <td>2025-05-26</td>
+                  <td>
+                    <button class="btn btn-sm theme-btn style-one">Edit</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- 9. System Settings (Admin) -->
+        <section
+          id="system-settings"
+          class="content-section"
+          style="display: none"
+        >
+          <header class="content-header mb-4">
+            <h2>System Settings</h2>
+            <p>Configure platform parameters and global preferences.</p>
+          </header>
+          <div class="dashboard-card p-4">
+            <h5 class="fw-bold mb-3">General Settings</h5>
+            <div class="mb-3">
+              <label for="siteTitle" class="form-label small fw-bold"
+                >Site Title</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="siteTitle"
+                value="Tripex Travel Agency"
+              />
+            </div>
+            <div class="form-check form-switch mb-3">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="maintenanceMode"
+              />
+              <label class="form-check-label" for="maintenanceMode"
+                >Maintenance Mode</label
+              >
+            </div>
+            <div class="form-check form-switch mb-4">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="emailNotif"
+                checked
+              />
+              <label class="form-check-label" for="emailNotif"
+                >Global Email Notifications</label
+              >
+            </div>
+            <button class="theme-btn style-one">Save Settings</button>
+          </div>
+        </section>
+
+        <!-- 10. Edit Profile -->
+        <section
+          id="edit-profile"
+          class="content-section"
+          style="display: none"
+        >
+          <header class="content-header mb-4">
+            <h2>Edit Profile</h2>
+            <p>Update your personal information and security settings.</p>
+          </header>
+          <div class="dashboard-card p-4">
+            <form class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label small fw-bold">Full Name</label>
+                <input type="text" class="form-control" value="Explorer User" />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label small fw-bold">Email Address</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="profile-email-input"
+                  readonly
+                />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label small fw-bold">Phone Number</label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  placeholder="+1 (555) 123-4567"
+                />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label small fw-bold">Address</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="123 Main St"
+                />
+              </div>
+              <div class="col-12">
+                <label for="profilePicture" class="form-label small fw-bold"
+                  >Profile Picture</label
+                >
+                <input class="form-control" type="file" id="profilePicture" />
+              </div>
+              <div class="col-12 mt-4">
+                <button class="theme-btn style-one">Save Changes</button>
+              </div>
+            </form>
+          </div>
+        </section>
       </main>
     </div>
 

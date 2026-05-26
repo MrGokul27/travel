@@ -10,10 +10,21 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Update UI components
-  document.getElementById("display-email").innerText = email;
-  document.getElementById("welcome-email").innerText = email.split("@")[0];
-  document.getElementById("display-role-badge").innerText = role;
-  document.getElementById("role-text").innerText = role;
+  const updateElementText = (id, value) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.innerText = value;
+    }
+  };
+
+  updateElementText("display-email", email);
+  updateElementText("welcome-email", email.split("@")[0]);
+  updateElementText("display-role-badge", role);
+  updateElementText("role-text", role);
+
+  // Set profile email input if it exists
+  const profileEmail = document.getElementById("profile-email-input");
+  if (profileEmail) profileEmail.value = email;
 
   // Handle Role-Based Sidebar Visibility
   const allSidebarListItems = document.querySelectorAll(".sidebar-nav ul li"); // Select all list items in the sidebar
@@ -34,6 +45,33 @@ document.addEventListener("DOMContentLoaded", () => {
       item.style.display = "block";
     }
   });
+
+  // Navigation logic for existing sidebar links
+  const navLinks = document.querySelectorAll(
+    ".sidebar-nav li a:not(#logout-btn)",
+  );
+  const sections = document.querySelectorAll(".content-section");
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const targetHref = link.getAttribute("href");
+
+      if (targetHref.startsWith("#")) {
+        e.preventDefault();
+        const targetId = targetHref.substring(1);
+
+        // Update Active Link UI
+        navLinks.forEach((l) => l.classList.remove("active"));
+        link.classList.add("active");
+
+        // Show correct section, hide others
+        sections.forEach((sec) => {
+          sec.style.display = sec.id === targetId ? "block" : "none";
+        });
+      }
+    });
+  });
+
   // Logout Handler
   const logoutBtn = document.getElementById("logout-btn");
   if (logoutBtn) {

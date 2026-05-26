@@ -17,6 +17,7 @@
   flex-direction: column;
   transition: var(--transition-smooth);
   padding: 30px 20px;
+  flex-shrink: 0; /* Prevent sidebar from shrinking */
 }
 
 .sidebar-header {
@@ -45,16 +46,20 @@
   max-width: 150px;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap; /* Prevent email from wrapping */
 }
 
 .user-brief .badge {
   background: var(--primary);
   text-transform: capitalize;
   font-size: 11px;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
 }
 
 .sidebar-nav ul {
   padding: 0;
+  list-style: none; /* Ensure no default list styling */
 }
 
 .nav-label {
@@ -75,11 +80,13 @@
   font-weight: 600;
   color: var(--text-muted);
   transition: var(--transition-fast);
+  text-decoration: none; /* Remove underline */
 }
 
 .sidebar-nav li a i {
   width: 20px;
   text-align: center;
+  font-size: 16px; /* Consistent icon size */
 }
 
 .sidebar-nav li a:hover,
@@ -92,11 +99,23 @@
 .dashboard-content {
   flex: 1;
   padding: 40px;
+  overflow-y: auto; /* Allow scrolling for content */
+}
+
+.content-header {
+  margin-bottom: 30px;
 }
 
 .content-header h2 {
   font-size: 32px;
   font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+
+.content-header p {
+  font-size: 16px;
+  color: var(--text-muted);
 }
 
 .stat-card {
@@ -119,4 +138,369 @@
   align-items: center;
   justify-content: center;
   font-size: 24px;
+  /* Enhanced Dashboard UI Elements */
+  .dashboard-card {
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--light-green);
+    padding: 25px;
+    transition: var(--transition-fast);
+  }
+
+  .dashboard-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .dashboard-table {
+    border-collapse: collapse;
+    font-size: 14px;
+    table-layout: fixed; /* Ensures columns are consistent */
+  }
+
+  .dashboard-table thead {
+    background: var(--light-green);
+    color: var(--dark);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .dashboard-table th,
+  .dashboard-table td {
+    padding: 18px 25px;
+    text-align: left;
+    border-bottom: 1px solid #f0f3ee;
+    vertical-align: middle; /* Align content vertically */
+  }
+
+  .dashboard-table tbody tr:hover {
+    background-color: #f9fbf8;
+  }
+
+  .dashboard-table .badge {
+    padding: 6px 10px;
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .dashboard-table .btn.theme-btn {
+    padding: 8px 15px;
+    font-size: 13px;
+    border-radius: var(--radius-sm);
+  }
+
+  .content-section {
+    animation: fadeIn 0.4s ease-out;
+    margin-bottom: 40px; /* Add spacing between sections */
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Form Control Styling within Dashboard */
+  .dashboard-card .form-control,
+  .dashboard-card .form-select {
+    border: 1px solid var(--light-green);
+    background-color: var(--gray-bg);
+    border-radius: var(--radius-sm);
+    padding: 10px 15px;
+    font-size: 14px;
+    color: var(--dark);
+    transition: var(--transition-fast);
+  }
+
+  .dashboard-card .form-control:focus,
+  .dashboard-card .form-select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.1);
+    background-color: var(--white);
+  }
+
+  .dashboard-card .form-label {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 5px;
+  }
+
+  /* Progress Bar Styling */
+  .progress {
+    height: 8px;
+    background-color: var(--light-green);
+    border-radius: var(--radius-pill);
+    overflow: hidden;
+  }
+
+  .progress-bar {
+    background-color: var(--primary);
+    border-radius: var(--radius-pill);
+  }
+
+  /* Specific styling for tripex-tour-item within dashboard */
+  .tripex-tour-item {
+    background-color: var(--white);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--light-green); /* Added for consistency */
+  }
+
+  .tripex-tour-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .tripex-tour-item .thumbnail {
+    height: 180px; /* Adjusted height for dashboard context */
+    position: relative;
+  }
+
+  .tripex-tour-item .thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+  }
+
+  .tripex-tour-item:hover .thumbnail img {
+    transform: scale(1.08);
+  }
+
+  .tripex-tour-item .duration {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background-color: rgba(29, 43, 31, 0.7);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    color: var(--white);
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .tripex-tour-item .content-wrap {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tripex-tour-item .title {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .tripex-tour-item .title a {
+    color: var(--dark);
+    font-weight: 700;
+  }
+
+  .tripex-tour-item .title a:hover {
+    color: var(--primary);
+  }
+
+  .tripex-tour-item .location {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .tripex-tour-item .location i {
+    color: var(--primary);
+  }
+
+  .tripex-tour-item p {
+    color: var(--text-muted);
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+
+  .tripex-tour-item .tour-footer {
+    margin-top: auto; /* Pushes button to the bottom */
+    padding-top: 15px;
+    border-top: 1px solid var(--light-green);
+  }
+
+  .tripex-tour-item .theme-btn {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: var(--radius-sm);
+  }
+
+  /* Responsive adjustments for dashboard */
+  @media (max-width: 991px) {
+    .dashboard-sidebar {
+      width: 250px;
+      padding: 20px 15px;
+    }
+
+    .dashboard-content {
+      padding: 30px;
+    }
+
+    .content-header h2 {
+      font-size: 28px;
+    }
+
+    .stat-card {
+      padding: 20px;
+    }
+
+    .stat-card .icon {
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+    }
+
+    .stat-card .details h3 {
+      font-size: 24px;
+    }
+
+    .dashboard-table th,
+    .dashboard-table td {
+      padding: 15px 20px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .dashboard-wrapper {
+      flex-direction: column;
+    }
+
+    .dashboard-sidebar {
+      width: 100%;
+      height: auto;
+      border-right: none;
+      border-bottom: 1px solid var(--light-green);
+      padding: 15px 20px;
+    }
+
+    .sidebar-header {
+      margin-bottom: 20px;
+    }
+
+    .user-brief {
+      margin-bottom: 20px;
+    }
+
+    .sidebar-nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .sidebar-nav li {
+      flex: 1 1 auto; /* Allow items to grow and shrink */
+      max-width: 150px; /* Limit width for smaller screens */
+    }
+
+    .sidebar-nav li a {
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+      gap: 5px;
+      padding: 8px 10px;
+      font-size: 12px;
+    }
+
+    .sidebar-nav li a i {
+      font-size: 18px;
+    }
+
+    .nav-label {
+      width: 100%;
+      text-align: center;
+      margin: 15px 0 5px 0;
+    }
+
+    .dashboard-content {
+      padding: 20px;
+    }
+
+    .content-header h2 {
+      font-size: 24px;
+    }
+
+    .stat-card {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .stat-card .icon {
+      margin-bottom: 10px;
+    }
+
+    .dashboard-table th,
+    .dashboard-table td {
+      padding: 12px 15px;
+      font-size: 12px;
+    }
+
+    .dashboard-table .btn.theme-btn {
+      padding: 6px 10px;
+      font-size: 11px;
+    }
+
+    .dashboard-card .form-control,
+    .dashboard-card .form-select {
+      padding: 8px 12px;
+      font-size: 13px;
+    }
+
+    .dashboard-card .form-label {
+      font-size: 12px;
+    }
+
+    .tripex-tour-item .thumbnail {
+      height: 150px;
+    }
+
+    .tripex-tour-item .content-wrap {
+      padding: 15px;
+    }
+
+    .tripex-tour-item .title {
+      font-size: 16px;
+    }
+
+    .tripex-tour-item .location {
+      font-size: 12px;
+    }
+
+    .tripex-tour-item p {
+      font-size: 12px;
+    }
+
+    .tripex-tour-item .theme-btn {
+      font-size: 12px;
+      padding: 8px 12px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .sidebar-nav li {
+      max-width: 100%; /* Stack items vertically on very small screens */
+    }
+  }
 }
