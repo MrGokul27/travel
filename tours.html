@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tours List - Tripex Travel Agency</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <!-- Custom CSS Stylesheet -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/about.css" />
+    <link rel="stylesheet" href="assets/css/tours.css" />
+  </head>
+
+  <body>
+    <!-- ====== Tripex Offcanvas Panel ====== -->
+    <div class="tripex-offcanvas-panel" id="tripex-offcanvas-drawer">
+      <div class="offcanvas-panel-inner">
+        <div
+          class="panel-header d-flex justify-content-between align-items-center"
+        >
+          <a href="index.html" class="brand-logo">
+            <img
+              src="assets/images/logoStackly.webp"
+              alt="Stackly Logo"
+              class="logo-img"
+            />
+          </a>
+          <div class="panel-close-btn" id="offcanvas-close-trigger">
+            <i class="fas fa-times"></i>
+          </div>
+        </div>
+        <div class="offcanvas-body">
+          <div class="panel-box mb-40">
+            <h4 class="panel-widget-title">Who Tripex Agency?</h4>
+            <p>
+              We turn your dream vacations into unforgettable realities. Whether
+              you're seeking a relaxing beach escape or a thrilling adventure.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dynamic Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- ====== Start Inner Hero Section ====== -->
+    <section
+      class="tripex-inner-hero"
+      style="
+        background-image:
+          linear-gradient(rgba(29, 43, 31, 0.7), rgba(29, 43, 31, 0.7)),
+          url(&quot;assets/images/tours/tours-banner-image.webp&quot;);
+      "
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="inner-hero-content text-center reveal reveal-fade-up">
+              <h1 class="page-title">Tours</h1>
+              <ul class="breadcrumb-link justify-content-center">
+                <li><a href="index.html">Home</a></li>
+                <li class="separator"><i class="fas fa-angle-right"></i></li>
+                <li class="active">Tours</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== Start Tour List Section ====== -->
+    <section class="tripex-tour-list-sec py-5 my-5">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Sidebar Filters -->
+          <div class="col-xl-4">
+            <aside class="tour-sidebar reveal reveal-slide-left">
+              <!-- Search Widget -->
+              <div class="sidebar-widget mb-40">
+                <h4 class="widget-title">Search Tours</h4>
+                <form class="sidebar-search-form">
+                  <input type="text" placeholder="Search destination..." />
+                  <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+              </div>
+
+              <!-- Destination Filter -->
+              <div class="sidebar-widget mb-40">
+                <h4 class="widget-title">Destinations</h4>
+                <div class="widget-content custom-checkbox-list">
+                  <div
+                    class="filter-item d-flex justify-content-between align-items-center"
+                  >
+                    <label class="check-container"
+                      >Thailand
+                      <input type="checkbox" checked="checked" />
+                      <span class="checkmark"></span>
+                    </label>
+                    <span class="count">15</span>
+                  </div>
+                  <div
+                    class="filter-item d-flex justify-content-between align-items-center"
+                  >
+                    <label class="check-container"
+                      >Italy
+                      <input type="checkbox" />
+                      <span class="checkmark"></span>
+                    </label>
+                    <span class="count">08</span>
+                  </div>
+                  <div
+                    class="filter-item d-flex justify-content-between align-items-center"
+                  >
+                    <label class="check-container"
+                      >Switzerland
+                      <input type="checkbox" />
+                      <span class="checkmark"></span>
+                    </label>
+                    <span class="count">12</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Activities Filter -->
+              <div class="sidebar-widget mb-40">
+                <h4 class="widget-title">Tour Activities</h4>
+                <div class="widget-content custom-checkbox-list">
+                  <div class="filter-item">
+                    <label class="check-container"
+                      >Adventure Tours
+                      <input type="checkbox" />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="filter-item">
+                    <label class="check-container"
+                      >Historical Tours
+                      <input type="checkbox" />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="filter-item">
+                    <label class="check-container"
+                      >Relaxation Escapes
+                      <input type="checkbox" />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Review Filter -->
+              <div class="sidebar-widget mb-40">
+                <h4 class="widget-title">Filter by Rating</h4>
+                <div class="widget-content custom-checkbox-list">
+                  <div class="filter-item">
+                    <label class="check-container">
+                      <span class="stars text-orange"
+                        ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                        ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                        ><i class="fas fa-star"></i
+                      ></span>
+                      <input type="checkbox" />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="filter-item">
+                    <label class="check-container">
+                      <span class="stars text-orange"
+                        ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                        ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                        ><i class="far fa-star"></i
+                      ></span>
+                      <input type="checkbox" />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sidebar-widget promo-widget">
+                <div
+                  class="promo-banner text-center text-white p-5 rounded-4"
+                  style="
+                    background: var(--dark);
+                    background-image: url(&quot;assets/images/home/map-bg.webp&quot;);
+                  "
+                >
+                  <h3 class="text-white">Get 25% Off</h3>
+                  <p class="text-white-50">On Your First Booking</p>
+                  <a href="contact.html" class="theme-btn style-two mt-3"
+                    >Book Now</a
+                  >
+                </div>
+              </div>
+            </aside>
+          </div>
+
+          <!-- Tour List Items -->
+          <div class="col-xl-8">
+            <div class="tripex-list-wrapper">
+              <!-- Sorting Bar -->
+              <div
+                class="tour-sorting-bar mb-4 p-3 bg-white rounded-4 border d-flex justify-content-between align-items-center reveal reveal-fade-up"
+              >
+                <div class="results-text">
+                  <p class="mb-0 text-muted">
+                    Showing
+                    <span class="text-dark fw-bold">1-12 of 45</span> Results
+                  </p>
+                </div>
+                <div class="sort-select d-flex align-items-center gap-2">
+                  <span class="small text-muted text-nowrap">Sort by:</span>
+                  <select
+                    class="form-select form-select-sm border-0 bg-light rounded-pill px-3"
+                  >
+                    <option selected>Newest Arrivals</option>
+                    <option value="1">Price: Low to High</option>
+                    <option value="2">Price: High to Low</option>
+                    <option value="3">Top Rated</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Tour List Item 1 -->
+              <div class="tripex-tour-list-item mb-4 reveal reveal-fade-up">
+                <div class="row g-0 align-items-center">
+                  <div class="col-md-5">
+                    <div class="thumbnail position-relative overflow-hidden">
+                      <img
+                        src="assets/images/home/Start Popular Tours1.webp"
+                        alt="Tour"
+                        class="img-fluid w-100 object-fit-cover"
+                      />
+                      <div class="tag position-absolute top-0 start-0 m-3">
+                        <span class="badge bg-orange rounded-pill px-3 py-2"
+                          >Featured</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="content p-4">
+                      <div class="ratings text-orange mb-2">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i
+                        ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                        ><i class="fas fa-star"></i>
+                        <span class="text-muted small ms-2"
+                          >4.8 (3k Reviews)</span
+                        >
+                      </div>
+                      <h4 class="title mb-3">
+                        <a href="#">Beautiful Diamond Beach</a>
+                      </h4>
+                      <p class="text-muted small mb-3">
+                        Explore the crystal clear waters and white sands of
+                        Bali's most iconic coastline with our professional
+                        guides.
+                      </p>
+                      <div class="meta d-flex gap-3 mb-4">
+                        <span class="small"
+                          ><i
+                            class="fas fa-map-marker-alt text-orange me-1"
+                          ></i>
+                          Bali</span
+                        >
+                        <span class="small"
+                          ><i class="fas fa-clock text-orange me-1"></i> 3
+                          Days</span
+                        >
+                        <span class="small"
+                          ><i class="fas fa-users text-orange me-1"></i>
+                          10+</span
+                        >
+                      </div>
+                      <div
+                        class="footer d-flex justify-content-between align-items-center border-top pt-3"
+                      >
+                        <div class="price">
+                          <span class="text-muted small">From</span>
+                          <h3 class="mb-0 fw-bold text-orange">$150.00</h3>
+                        </div>
+                        <a
+                          href="contact.html"
+                          class="theme-btn style-one py-2 px-4"
+                          >Book Now</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tour List Item 2 -->
+              <div class="tripex-tour-list-item mb-4 reveal reveal-fade-up">
+                <div class="row g-0 align-items-center">
+                  <div class="col-md-5">
+                    <div class="thumbnail position-relative overflow-hidden">
+                      <img
+                        src="assets/images/home/Start Popular Tours2.webp"
+                        alt="Tour"
+                        class="img-fluid w-100 object-fit-cover"
+                      />
+                      <div class="tag position-absolute top-0 start-0 m-3">
+                        <span class="badge bg-orange rounded-pill px-3 py-2"
+                          >25% Off</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="content p-4">
+                      <div class="ratings text-orange mb-2">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i
+                        ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                        ><i class="fas fa-star"></i>
+                        <span class="text-muted small ms-2"
+                          >4.9 (4k Reviews)</span
+                        >
+                      </div>
+                      <h4 class="title mb-3">
+                        <a href="#">Viewpoint Nangyuan Island</a>
+                      </h4>
+                      <p class="text-muted small mb-3">
+                        Witness breathtaking ocean views connecting tiny
+                        sandbars and mountains in one of Thailand's most unique
+                        islands.
+                      </p>
+                      <div class="meta d-flex gap-3 mb-4">
+                        <span class="small"
+                          ><i
+                            class="fas fa-map-marker-alt text-orange me-1"
+                          ></i>
+                          Thailand</span
+                        >
+                        <span class="small"
+                          ><i class="fas fa-clock text-orange me-1"></i> 4
+                          Days</span
+                        >
+                        <span class="small"
+                          ><i class="fas fa-users text-orange me-1"></i>
+                          05+</span
+                        >
+                      </div>
+                      <div
+                        class="footer d-flex justify-content-between align-items-center border-top pt-3"
+                      >
+                        <div class="price">
+                          <span class="text-muted small">From</span>
+                          <h3 class="mb-0 fw-bold text-orange">$220.00</h3>
+                        </div>
+                        <a
+                          href="contact.html"
+                          class="theme-btn style-one py-2 px-4"
+                          >Book Now</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tour List Item 3 -->
+              <div class="tripex-tour-list-item mb-4 reveal reveal-fade-up">
+                <div class="row g-0 align-items-center">
+                  <div class="col-md-5">
+                    <div class="thumbnail position-relative overflow-hidden">
+                      <img
+                        src="assets/images/home/Start Popular Tours3.webp"
+                        alt="Tour"
+                        class="img-fluid w-100 object-fit-cover"
+                      />
+                      <div class="tag position-absolute top-0 start-0 m-3">
+                        <span class="badge bg-orange rounded-pill px-3 py-2"
+                          >New</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="content p-4">
+                      <div class="ratings text-orange mb-2">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i
+                        ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                        ><i class="far fa-star"></i>
+                        <span class="text-muted small ms-2"
+                          >4.5 (2k Reviews)</span
+                        >
+                      </div>
+                      <h4 class="title mb-3">
+                        <a href="#">Ancient Rome & Vatican City</a>
+                      </h4>
+                      <p class="text-muted small mb-3">
+                        Immerse yourself in the history of the Roman Empire and
+                        explore the iconic Vatican City with expert local
+                        guides.
+                      </p>
+                      <div class="meta d-flex gap-3 mb-4">
+                        <span class="small"
+                          ><i
+                            class="fas fa-map-marker-alt text-orange me-1"
+                          ></i>
+                          Rome</span
+                        >
+                        <span class="small"
+                          ><i class="fas fa-clock text-orange me-1"></i> 5
+                          Days</span
+                        >
+                        <span class="small"
+                          ><i class="fas fa-users text-orange me-1"></i>
+                          08+</span
+                        >
+                      </div>
+                      <div
+                        class="footer d-flex justify-content-between align-items-center border-top pt-3"
+                      >
+                        <div class="price">
+                          <span class="text-muted small">From</span>
+                          <h3 class="mb-0 fw-bold text-orange">$320.00</h3>
+                        </div>
+                        <a
+                          href="contact.html"
+                          class="theme-btn style-one py-2 px-4"
+                          >Book Now</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tour List Item 4 -->
+              <div class="tripex-tour-list-item mb-4 reveal reveal-fade-up">
+                <div class="row g-0 align-items-center">
+                  <div class="col-md-5">
+                    <div class="thumbnail position-relative overflow-hidden">
+                      <img
+                        src="assets/images/home/Start Popular Tours4.webp"
+                        alt="Tour"
+                        class="img-fluid w-100 object-fit-cover"
+                      />
+                      <div class="tag position-absolute top-0 start-0 m-3">
+                        <span class="badge bg-orange rounded-pill px-3 py-2"
+                          >Popular</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="content p-4">
+                      <div class="ratings text-orange mb-2">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i
+                        ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                        ><i class="fas fa-star"></i>
+                        <span class="text-muted small ms-2"
+                          >5.0 (5k Reviews)</span
+                        >
+                      </div>
+                      <h4 class="title mb-3">
+                        <a href="#">Swiss Alps Scenic Journey</a>
+                      </h4>
+                      <p class="text-muted small mb-3">
+                        Embark on a breathtaking journey through the majestic
+                        Swiss Alps, featuring stunning landscapes and charming
+                        villages.
+                      </p>
+                      <div class="meta d-flex gap-3 mb-4">
+                        <span class="small"
+                          ><i
+                            class="fas fa-map-marker-alt text-orange me-1"
+                          ></i>
+                          Switzerland</span
+                        >
+                        <span class="small"
+                          ><i class="fas fa-clock text-orange me-1"></i> 7
+                          Days</span
+                        >
+                        <span class="small"
+                          ><i class="fas fa-users text-orange me-1"></i>
+                          12+</span
+                        >
+                      </div>
+                      <div
+                        class="footer d-flex justify-content-between align-items-center border-top pt-3"
+                      >
+                        <div class="price">
+                          <span class="text-muted small">From</span>
+                          <h3 class="mb-0 fw-bold text-orange">$550.00</h3>
+                        </div>
+                        <a
+                          href="contact.html"
+                          class="theme-btn style-one py-2 px-4"
+                          >Book Now</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pagination -->
+            <div
+              class="pagination-wrapper mt-5 text-center reveal reveal-fade-up"
+            >
+              <ul
+                class="pagination list-unstyled d-flex justify-content-center gap-2"
+              >
+                <li>
+                  <a href="#" class="page-link-custom"
+                    ><i class="fas fa-angle-left"></i
+                  ></a>
+                </li>
+                <li><a href="#" class="page-link-custom active">1</a></li>
+                <li><a href="#" class="page-link-custom">2</a></li>
+                <li>
+                  <a href="#" class="page-link-custom"
+                    ><i class="fas fa-angle-right"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== CTA Section ====== -->
+    <section
+      class="tripex-cta-sec-centered py-5 my-5 bg-orange text-white text-center position-relative overflow-hidden"
+    >
+      <div class="container position-relative py-5" style="z-index: 2">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 reveal reveal-fade-up">
+            <h2 class="text-white mb-4 display-5 fw-bold">
+              Ready for Your Next Adventure?
+            </h2>
+            <p class="text-white-50 mb-5 fs-5">
+              Whether you're dreaming of sun-soaked beaches, charming city
+              escapes, or thrilling mountain treks, we've got the perfect
+              getaway for you.
+            </p>
+            <a href="contact.html" class="theme-btn style-two fs-5 px-5 py-3"
+              >Booking Tours <i class="fas fa-arrow-right ms-2"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="map-bg position-absolute top-0 start-0 w-100 h-100 opacity-10"
+        style="
+          background-image: url(&quot;assets/images/home/map-bg.webp&quot;);
+          background-size: cover;
+        "
+      ></div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom Interaction Script -->
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

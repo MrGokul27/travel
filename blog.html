@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Grid - Tripex Travel Agency</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <!-- Custom CSS Stylesheet -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/about.css" />
+    <link rel="stylesheet" href="assets/css/blog.css" />
+  </head>
+
+  <body>
+    <!-- ====== Tripex Offcanvas Panel ====== -->
+    <div class="tripex-offcanvas-panel" id="tripex-offcanvas-drawer">
+      <div class="offcanvas-panel-inner">
+        <div
+          class="panel-header d-flex justify-content-between align-items-center"
+        >
+          <a href="index.html" class="brand-logo">
+            <img
+              src="assets/images/logoStackly.webp"
+              alt="Stackly Logo"
+              class="logo-img"
+            />
+          </a>
+          <div class="panel-close-btn" id="offcanvas-close-trigger">
+            <i class="fas fa-times"></i>
+          </div>
+        </div>
+        <div class="offcanvas-body">
+          <div class="panel-box mb-40">
+            <h4 class="panel-widget-title">Who Tripex Agency?</h4>
+            <p>
+              We turn your dream vacations into unforgettable realities. Whether
+              you're seeking a relaxing beach escape or a thrilling adventure.
+            </p>
+          </div>
+          <div class="panel-box mb-40">
+            <h4 class="panel-widget-title mb-15">Quick Contact</h4>
+            <div class="panel-info-list">
+              <div class="panel-info-box">
+                <div class="content">
+                  <span
+                    ><i class="fas fa-headset text-orange me-2"></i>Need
+                    help?</span
+                  >
+                  <h5><a href="tel:123458698888">1(234)-5869-8888</a></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dynamic Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- ====== Start Inner Hero Section ====== -->
+    <section
+      class="tripex-inner-hero"
+      style="
+        background-image:
+          linear-gradient(rgba(29, 43, 31, 0.7), rgba(29, 43, 31, 0.7)),
+          url(&quot;assets/images/blog/photo-1488085061387-422e29b40080.webp&quot;);
+      "
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="inner-hero-content text-center reveal reveal-fade-up">
+              <h1 class="page-title">Blog</h1>
+              <ul class="breadcrumb-link justify-content-center">
+                <li><a href="index.html">Home</a></li>
+                <li class="separator"><i class="fas fa-angle-right"></i></li>
+                <li class="active">Blog</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== Start Blog Grid Section ====== -->
+    <section class="tripex-blog-grid-sec py-5 my-5">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Blog Post Item 1 -->
+          <div class="col-xl-4 col-md-6 reveal reveal-fade-up">
+            <div class="blog-post-item">
+              <div class="thumbnail">
+                <img
+                  src="assets/images/blog/photo-1464822759023-fed622ff2c3b.webp"
+                  alt="Blog"
+                />
+                <a href="#" class="date-btn"
+                  >28 <span class="month">Jan</span></a
+                >
+              </div>
+              <div class="content">
+                <div class="post-meta mb-3">
+                  <span
+                    ><i class="far fa-user text-orange me-1"></i>Brian C.</span
+                  >
+                  <span class="ms-3"
+                    ><i class="far fa-comments text-orange me-1"></i>Comments
+                    (5)</span
+                  >
+                </div>
+                <h4 class="title">
+                  <a href="#">How to Travel on a Budget Without Missing Out</a>
+                </h4>
+                <p>
+                  Travel in style and confidence with our premium insights and
+                  budget tips.
+                </p>
+                <a href="#" class="theme-btn style-one mt-3"
+                  >Read More <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <!-- Repeat for other items... I've added a few placeholders for visual balance -->
+          <div class="col-xl-4 col-md-6">
+            <div class="blog-post-item">
+              <div class="thumbnail">
+                <img
+                  src="assets/images/blog/photo-1469854523086-cc02fe5d8800 (3).webp"
+                  alt="Blog"
+                />
+                <a href="#" class="date-btn"
+                  >25 <span class="month">Jan</span></a
+                >
+              </div>
+              <div class="content">
+                <div class="post-meta mb-3">
+                  <span
+                    ><i class="far fa-user text-orange me-1"></i>Alice W.</span
+                  >
+                  <span class="ms-3"
+                    ><i class="far fa-comments text-orange me-1"></i>Comments
+                    (3)</span
+                  >
+                </div>
+                <h4 class="title">
+                  <a href="#"
+                    >Top Beach Vacations for Sun, Sand, and Relaxation</a
+                  >
+                </h4>
+                <p>
+                  Discover the world's most pristine shorelines for your next
+                  summer escape.
+                </p>
+                <a href="#" class="theme-btn style-one mt-3"
+                  >Read More <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-md-6 reveal reveal-fade-up">
+            <div class="blog-post-item">
+              <div class="thumbnail">
+                <img
+                  src="assets/images/blog/photo-1476514525535-07fb3b4ae5f1 (2).webp"
+                  alt="Blog"
+                />
+                <a href="#" class="date-btn"
+                  >20 <span class="month">Jan</span></a
+                >
+              </div>
+              <div class="content">
+                <div class="post-meta mb-3">
+                  <span
+                    ><i class="far fa-user text-orange me-1"></i>John D.</span
+                  >
+                  <span class="ms-3"
+                    ><i class="far fa-comments text-orange me-1"></i>Comments
+                    (8)</span
+                  >
+                </div>
+                <h4 class="title">
+                  <a href="#"
+                    >Adventure Awaits: Best Tours for Thrill-Seekers</a
+                  >
+                </h4>
+                <p>
+                  From mountain peaks to deep valleys, find your next adrenaline
+                  rush here.
+                </p>
+                <a href="#" class="theme-btn style-one mt-3"
+                  >Read More <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <!-- Blog Post Item 4 -->
+          <div class="col-xl-4 col-md-6 reveal reveal-fade-up">
+            <div class="blog-post-item">
+              <div class="thumbnail">
+                <img
+                  src="assets/images/blog/photo-1501785888041-af3ef285b470 (1).webp"
+                  alt="Blog"
+                />
+                <a href="#" class="date-btn"
+                  >15 <span class="month">Jan</span></a
+                >
+              </div>
+              <div class="content">
+                <div class="post-meta mb-3">
+                  <span
+                    ><i class="far fa-user text-orange me-1"></i>Sarah K.</span
+                  >
+                  <span class="ms-3"
+                    ><i class="far fa-comments text-orange me-1"></i>Comments
+                    (2)</span
+                  >
+                </div>
+                <h4 class="title">
+                  <a href="#"
+                    >10 Essential Tips for Your First Mountain Hiking Trip</a
+                  >
+                </h4>
+                <p>
+                  Get ready for the peaks with our comprehensive guide to gear
+                  and safety.
+                </p>
+                <a href="#" class="theme-btn style-one mt-3"
+                  >Read More <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <!-- Blog Post Item 5 -->
+          <div class="col-xl-4 col-md-6 reveal reveal-fade-up">
+            <div class="blog-post-item">
+              <div class="thumbnail">
+                <img
+                  src="assets/images/blog/photo-1507525428034-b723cf961d3e (2).webp"
+                  alt="Blog"
+                />
+                <a href="#" class="date-btn"
+                  >12 <span class="month">Jan</span></a
+                >
+              </div>
+              <div class="content">
+                <div class="post-meta mb-3">
+                  <span
+                    ><i class="far fa-user text-orange me-1"></i>Mike R.</span
+                  >
+                  <span class="ms-3"
+                    ><i class="far fa-comments text-orange me-1"></i>Comments
+                    (12)</span
+                  >
+                </div>
+                <h4 class="title">
+                  <a href="#">Exploring the Hidden Gems of the Mediterranean</a>
+                </h4>
+                <p>
+                  Beyond the tourist traps lie breathtaking vistas and authentic
+                  local culture.
+                </p>
+                <a href="#" class="theme-btn style-one mt-3"
+                  >Read More <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <!-- Blog Post Item 6 -->
+          <div class="col-xl-4 col-md-6 reveal reveal-fade-up">
+            <div class="blog-post-item">
+              <div class="thumbnail">
+                <img
+                  src="assets/images/blog/photo-1533105079780-92b9be482077.webp"
+                  alt="Blog"
+                />
+                <a href="#" class="date-btn"
+                  >05 <span class="month">Jan</span></a
+                >
+              </div>
+              <div class="content">
+                <div class="post-meta mb-3">
+                  <span
+                    ><i class="far fa-user text-orange me-1"></i>Emma L.</span
+                  >
+                  <span class="ms-3"
+                    ><i class="far fa-comments text-orange me-1"></i>Comments
+                    (7)</span
+                  >
+                </div>
+                <h4 class="title">
+                  <a href="#"
+                    >Why Solo Travel is the Best Way to Find Yourself</a
+                  >
+                </h4>
+                <p>
+                  Embracing solitude on the road can lead to the most profound
+                  personal growth.
+                </p>
+                <a href="#" class="theme-btn style-one mt-3"
+                  >Read More <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="row mt-5 reveal reveal-fade-up">
+          <div class="col-12">
+            <div class="tripex-pagination d-flex justify-content-center">
+              <ul class="d-flex gap-2 list-unstyled">
+                <li>
+                  <a href="#" class="page-link-custom"
+                    ><i class="fas fa-angle-left"></i
+                  ></a>
+                </li>
+                <li><a href="#" class="page-link-custom active">1</a></li>
+                <li><a href="#" class="page-link-custom">2</a></li>
+                <li><a href="#" class="page-link-custom">3</a></li>
+                <li>
+                  <a href="#" class="page-link-custom"
+                    ><i class="fas fa-angle-right"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== CTA Section ====== -->
+    <section
+      class="tripex-cta-sec-centered py-5 my-5 bg-orange text-white text-center position-relative overflow-hidden"
+    >
+      <div class="container position-relative py-5" style="z-index: 2">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 reveal reveal-fade-up">
+            <h2 class="text-white mb-4 display-5 fw-bold">
+              Ready for Your Next Adventure?
+            </h2>
+            <p class="text-white-50 mb-5 fs-5">
+              Whether you're dreaming of sun-soaked beaches, charming city
+              escapes, or thrilling mountain treks, we've got the perfect
+              getaway for you.
+            </p>
+            <a href="contact.html" class="theme-btn style-two fs-5 px-5 py-3"
+              >Booking Tours <i class="fas fa-arrow-right ms-2"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="map-bg position-absolute top-0 start-0 w-100 h-100 opacity-10"
+        style="
+          background-image: url(&quot;assets/images/home/map-bg.webp&quot;);
+          background-size: cover;
+        "
+      ></div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom Interaction Script -->
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,256 @@
+.tripex-faq-sec {
+  position: relative;
+  z-index: 1;
+}
+
+/* Sidebar Widget Area */
+.sidebar-widget-area {
+  position: sticky;
+  top: 120px;
+}
+
+.sidebar-widget {
+  background: var(--white);
+  padding: 30px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--light-green);
+}
+
+.sidebar-widget .widget-content {
+  padding: 0;
+}
+
+.tripex-nav-tabs .nav-tabs {
+  border: none;
+  flex-direction: column;
+}
+
+.tripex-nav-tabs .nav-item {
+  margin-bottom: 10px;
+}
+
+.tripex-nav-tabs .nav-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border: 1px solid var(--light-green);
+  border-radius: var(--radius-sm);
+  color: var(--dark);
+  font-weight: 600;
+  font-size: 16px;
+  transition: var(--transition-fast);
+  background: var(--gray-bg);
+}
+
+.tripex-nav-tabs .nav-link i {
+  font-size: 14px;
+  transition: var(--transition-fast);
+}
+
+.tripex-nav-tabs .nav-link.active,
+.tripex-nav-tabs .nav-link:hover {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+}
+
+.tripex-nav-tabs .nav-link.active i,
+.tripex-nav-tabs .nav-link:hover i {
+  transform: translateX(5px);
+}
+
+/* Sidebar Banner Widget */
+.sidebar-banner-widget .widget-content {
+  padding: 40px 30px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background-color: var(--dark); /* Fallback */
+}
+
+.sidebar-banner-widget .banner-shape,
+.sidebar-banner-widget .shape {
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.sidebar-banner-widget .banner-shape {
+  bottom: 0;
+  right: 0;
+  opacity: 0.2;
+}
+
+.sidebar-banner-widget .shape {
+  top: 10%;
+  left: 10%;
+  opacity: 0.1;
+}
+
+.sidebar-banner-widget .content span {
+  display: inline-block;
+  background: var(--secondary);
+  color: var(--white);
+  padding: 5px 15px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.sidebar-banner-widget .content h3 {
+  color: var(--white);
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 25px;
+  line-height: 1.3;
+}
+
+.sidebar-banner-widget .theme-btn {
+  padding: 12px 25px;
+  font-size: 15px;
+}
+
+/* Accordion Styling */
+.accordion-card {
+  background: var(--white);
+  border: 1px solid var(--light-green);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.accordion-card.accordion-active {
+  border-color: var(--primary);
+  box-shadow: 0 10px 30px rgba(115, 184, 74, 0.1);
+}
+
+.accordion-header {
+  padding: 20px 30px;
+  cursor: pointer;
+  position: relative;
+}
+
+.accordion-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: var(--transition-fast);
+}
+
+.accordion-title .icon {
+  color: var(--primary);
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.accordion-header .accordion-button {
+  background: none;
+  border: none;
+  padding: 0;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.accordion-header .accordion-button:focus {
+  box-shadow: none;
+}
+
+.accordion-header .accordion-button::after {
+  content: "\f067"; /* Plus icon */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 16px;
+  color: var(--dark);
+  transition: transform 0.3s ease;
+  background-image: none; /* Override Bootstrap default */
+}
+
+.accordion-header .accordion-button:not(.collapsed)::after {
+  content: "\f068"; /* Minus icon */
+  transform: rotate(0deg);
+}
+
+.accordion-content {
+  padding: 0 30px 30px;
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.accordion-content p {
+  margin-bottom: 15px;
+}
+
+.accordion-content .check-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.accordion-content .check-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.accordion-content .check-list li i {
+  color: var(--primary);
+  font-size: 14px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+  .sidebar-widget-area {
+    position: static;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .sidebar-widget {
+    padding: 20px;
+  }
+
+  .tripex-nav-tabs .nav-link {
+    padding: 12px 15px;
+    font-size: 15px;
+  }
+
+  .sidebar-banner-widget .content h3 {
+    font-size: 20px;
+  }
+
+  .accordion-header {
+    padding: 15px 20px;
+  }
+
+  .accordion-title {
+    font-size: 16px;
+    gap: 10px;
+  }
+
+  .accordion-title .icon {
+    font-size: 20px;
+  }
+
+  .accordion-content {
+    padding: 0 20px 20px;
+    font-size: 14px;
+  }
+}

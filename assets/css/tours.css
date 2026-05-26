@@ -1,0 +1,583 @@
+/* =========================================
+   TOURS PAGE SPECIFIC STYLING
+========================================= */
+
+.tour-sidebar {
+  background: var(--white);
+  padding: 40px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  position: sticky;
+  top: 120px;
+}
+
+/* Sidebar Search Widget */
+.sidebar-search-form {
+  position: relative;
+}
+
+.sidebar-search-form input {
+  width: 100%;
+  padding: 15px 50px 15px 20px;
+  border: 1px solid #e4ece0;
+  border-radius: var(--radius-pill);
+  background: #f8fbf6;
+  font-size: 14px;
+  transition: var(--transition-fast);
+}
+
+.sidebar-search-form input:focus {
+  border-color: var(--primary);
+}
+
+.sidebar-search-form button {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  color: var(--primary);
+  cursor: pointer;
+}
+
+.sidebar-widget .widget-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--light-green);
+  position: relative;
+}
+
+.sidebar-widget .widget-title::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 35px;
+  height: 3px;
+  background: var(--primary);
+}
+
+/* Custom Checkbox Styling */
+.check-container {
+  display: flex;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 0;
+  cursor: pointer;
+  font-size: 15px;
+  user-select: none;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.check-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: var(--light-green);
+  border-radius: 4px;
+  transition: var(--transition-fast);
+}
+
+.check-container:hover input ~ .checkmark {
+  background-color: #d1dfc8;
+}
+
+.check-container input:checked ~ .checkmark {
+  background-color: var(--primary);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.check-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.check-container .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.filter-item:hover label {
+  color: var(--primary);
+}
+
+.filter-item {
+  margin-bottom: 12px;
+}
+
+.filter-item label {
+  font-size: 15px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.filter-item .count {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary);
+  background: var(--light-green);
+  padding: 2px 8px;
+  border-radius: 50px;
+}
+
+/* Promo Widget */
+.promo-banner {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.promo-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(29, 43, 31, 0.8);
+  z-index: -1;
+}
+
+/* Sorting Bar */
+.tour-sorting-bar {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 20px 30px !important;
+  border: none !important;
+  margin-bottom: 30px !important;
+  box-shadow: var(--shadow-card);
+}
+
+.tour-sorting-bar .form-select:focus {
+  box-shadow: none;
+  border-color: var(--primary);
+}
+
+/* Tour List Item Styling */
+.tripex-tour-list-item {
+  background: var(--white);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  border: none;
+  margin-bottom: 30px !important;
+  transition: var(--transition-smooth);
+}
+
+.tripex-tour-list-item:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+}
+
+.tripex-tour-list-item .thumbnail img {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tripex-tour-list-item .thumbnail {
+  height: 320px;
+  width: 100%;
+  display: block;
+  overflow: hidden;
+}
+
+.tripex-tour-list-item:hover .thumbnail img {
+  transform: scale(1.1);
+}
+
+.tripex-tour-list-item .content {
+  padding: 35px !important;
+}
+
+.tripex-tour-list-item .content .title {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.tripex-tour-list-item .content .title a {
+  color: var(--dark);
+}
+
+.tripex-tour-list-item .content .title a:hover {
+  color: var(--primary);
+}
+
+.tripex-tour-list-item .meta span {
+  font-weight: 600;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+}
+
+.tripex-tour-list-item .meta span i {
+  width: 24px;
+  color: var(--primary);
+  font-size: 16px;
+}
+
+.tripex-tour-list-item .footer {
+  border-top: 1px solid var(--light-green) !important;
+  padding-top: 20px !important;
+  margin-top: 10px;
+}
+
+/* Pagination */
+.page-link-custom {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  color: var(--dark);
+  border-radius: 50%;
+  font-weight: 800;
+  font-family: var(--font-heading);
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-fast);
+}
+
+.page-link-custom.active,
+.page-link-custom:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+/* =========================================
+   TRIPEX PREMIUM TEAM SECTION UI
+========================================= */
+
+/* Decorative Shapes */
+.tripex-team-page::before,
+.tripex-team-page::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 0;
+}
+
+.tripex-team-page::before {
+  width: 300px;
+  height: 300px;
+  background: rgba(115, 184, 74, 0.15);
+  top: -80px;
+  left: -80px;
+}
+
+.tripex-team-page::after {
+  width: 350px;
+  height: 350px;
+  background: rgba(244, 160, 33, 0.12);
+  bottom: -100px;
+  right: -100px;
+}
+
+/* Section Title */
+.section-title .sub-title {
+  display: inline-block;
+  padding: 8px 18px;
+  background: var(--light-green);
+  color: var(--primary);
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.section-title h2 {
+  font-size: 52px;
+  font-weight: 800;
+  color: #1b2a41;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+/* =========================================
+   TEAM CARD
+========================================= */
+
+.tripex-team-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.08),
+    inset 0 1px 1px rgba(255, 255, 255, 0.5);
+
+  transition: all 0.45s ease;
+  z-index: 1;
+  height: 100%;
+}
+
+.tripex-team-item:hover {
+  transform: translateY(-15px);
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.15),
+    0 0 35px rgba(115, 184, 74, 0.2);
+}
+
+/* Animated Border Glow */
+.tripex-team-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: 28px;
+  background: linear-gradient(
+    135deg,
+    rgba(115, 184, 74, 0.6),
+    rgba(244, 160, 33, 0.4),
+    rgba(115, 184, 74, 0.5)
+  );
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+.tripex-team-item:hover::before {
+  opacity: 1;
+}
+
+/* =========================================
+   IMAGE AREA
+========================================= */
+
+.member-image {
+  position: relative;
+  overflow: hidden;
+  height: 320px;
+  border-radius: 28px 28px 0 0;
+}
+
+.member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition:
+    transform 0.8s ease,
+    filter 0.5s ease;
+}
+
+.tripex-team-item:hover .member-image img {
+  transform: scale(1.12);
+  filter: brightness(1.08);
+}
+
+/* Gradient Overlay */
+.member-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.05));
+  opacity: 0.9;
+}
+
+/* Floating Social Bar */
+.social-box {
+  position: absolute;
+  left: 50%;
+  bottom: -30px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px 16px;
+  border-radius: 60px;
+  backdrop-filter: blur(12px);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+
+  transition: 0.45s ease;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 5;
+}
+
+.tripex-team-item:hover .social-box {
+  bottom: 20px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.social-box a {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+  color: #1b2a41;
+  font-size: 16px;
+
+  transition: all 0.35s ease;
+}
+
+.social-box a:hover {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+
+  color: #fff;
+  transform: translateY(-5px) scale(1.08);
+  box-shadow: 0 10px 18px rgba(115, 184, 74, 0.3);
+}
+
+/* =========================================
+   MEMBER INFO
+========================================= */
+
+.member-info {
+  position: relative;
+  text-align: center;
+  padding: 35px 25px 30px;
+  z-index: 2;
+}
+
+.member-info h4 {
+  font-size: 26px;
+  font-weight: 800;
+  color: #1b2a41;
+  margin-bottom: 8px;
+  transition: 0.3s ease;
+}
+
+.tripex-team-item:hover .member-info h4 {
+  color: var(--primary);
+}
+
+.member-info .position {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 600;
+  color: #7f8c8d;
+  letter-spacing: 0.5px;
+}
+
+/* =========================================
+   HERO SECTION ENHANCEMENT
+========================================= */
+
+.tripex-inner-hero {
+  padding: 170px 0 120px;
+  border-radius: 0 0 40px 40px;
+  overflow: hidden;
+  position: relative;
+}
+
+.tripex-inner-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top right,
+    rgba(255, 255, 255, 0.18),
+    transparent 30%
+  );
+}
+
+.page-title {
+  font-size: 72px;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.breadcrumb-link li {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+.breadcrumb-link li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 991px) {
+  .section-title h2 {
+    font-size: 40px;
+  }
+
+  .page-title {
+    font-size: 52px;
+  }
+
+  .member-image {
+    height: 280px;
+  }
+}
+
+@media (max-width: 767px) {
+  .tripex-team-page {
+    padding: 80px 0;
+  }
+
+  .section-title h2 {
+    font-size: 32px;
+  }
+
+  .page-title {
+    font-size: 42px;
+  }
+
+  .member-image {
+    height: 260px;
+  }
+
+  .member-info h4 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 575px) {
+  .page-title {
+    font-size: 34px;
+  }
+
+  .member-image {
+    height: 240px;
+  }
+
+  .member-info {
+    padding: 30px 18px 24px;
+  }
+}
