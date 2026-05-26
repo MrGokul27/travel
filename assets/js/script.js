@@ -469,6 +469,45 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // ==========================================
+  // 10. PLACEHOLDER NAVIGATION REDIRECT
+  // ==========================================
+  const initPlaceholderRedirects = () => {
+    document.addEventListener("click", (e) => {
+      const target = e.target.closest("a");
+      if (!target) return;
+
+      const href = target.getAttribute("href");
+
+      // Identify if the link is a functional trigger for UI components (Tabs, Accordions, Dropdowns)
+      const isUiTrigger =
+        target.hasAttribute("data-bs-toggle") ||
+        target.hasAttribute("data-bs-target") ||
+        target.classList.contains("dd-trigger") ||
+        target.closest(".nav-tabs") ||
+        target.closest(".accordion-header");
+
+      if (isUiTrigger) return;
+
+      // Check if navigation destination is "not given" (empty, #, or javascript:void)
+      if (
+        href === "#" ||
+        !href ||
+        href.trim() === "" ||
+        href === "javascript:void(0)"
+      ) {
+        // Allow anchor links that point to valid sections/elements on the same page
+        if (href && href.startsWith("#") && href.length > 1) {
+          const sectionId = href.substring(1);
+          if (document.getElementById(sectionId)) return;
+        }
+
+        e.preventDefault();
+        window.location.href = "404.html";
+      }
+    });
+  };
+
+  // ==========================================
   // 9. GALLERY MASONRY (ISOTOPE) INITIALIZATION
   // ==========================================
   const initGalleryMasonry = () => {
@@ -524,6 +563,7 @@ document.addEventListener("DOMContentLoaded", () => {
         initScrollAnimations();
         initActiveMenuLink();
         initGalleryMasonry();
+        initPlaceholderRedirects();
 
         // Initialize AOS Animations
         if (typeof AOS !== "undefined") {
