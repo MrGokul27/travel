@@ -328,27 +328,12 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         const email = loginForm.querySelector('[name="email"]').value;
         const role = loginForm.querySelector('[name="role"]').value;
-        showToastAlert(
-          `🔑 <strong>Login Successful!</strong><br/>` +
-            `Welcome back! You are logged in as <strong>${role}</strong>.<br/>` +
-            `Redirecting to your dashboard...`,
-        );
-        loginForm.reset();
-      });
-    }
 
-    // E. Register Form Mock
-    const registerForm = document.getElementById("register-form");
-    if (registerForm) {
-      registerForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const name = registerForm.querySelector('[name="name"]').value;
-        showToastAlert(
-          `🎉 <strong>Account Created!</strong><br/>` +
-            `Hello <strong>${name}</strong>, your account has been successfully registered.<br/>` +
-            `Please check your email to verify your account.`,
-        );
-        registerForm.reset();
+        // Store data for the dashboard
+        localStorage.setItem("userEmail", email);
+        localStorage.setItem("userRole", role);
+
+        window.location.href = "dashboard.html";
       });
     }
 
