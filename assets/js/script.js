@@ -467,6 +467,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const isUiTrigger =
         target.hasAttribute("data-bs-toggle") ||
         target.hasAttribute("data-bs-target") ||
+        target.querySelector(".dd-trigger") ||
         target.classList.contains("dd-trigger") ||
         target.closest(".nav-tabs") ||
         target.closest(".accordion-header");
