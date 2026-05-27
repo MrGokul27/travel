@@ -17,8 +17,15 @@
   </head>
   <body class="dashboard-body">
     <div class="dashboard-wrapper">
+      <!-- Sidebar Overlay -->
+      <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
       <!-- Sidebar -->
-      <aside class="dashboard-sidebar">
+      <aside class="dashboard-sidebar" id="dashboard-sidebar">
+        <button class="sidebar-close-btn d-md-none" id="sidebar-close-btn">
+          <i class="fas fa-times"></i>
+        </button>
+
         <div class="sidebar-header">
           <a href="index.html" class="brand-logo">
             <img
@@ -110,6 +117,18 @@
 
       <!-- Main Content -->
       <main class="dashboard-content">
+        <!-- Mobile Header -->
+        <header class="mobile-dashboard-header d-md-none">
+          <button id="sidebar-toggle-btn" class="sidebar-toggle-btn">
+            <i class="fas fa-bars"></i>
+          </button>
+          <img
+            src="assets/images/logoStackly.webp"
+            alt="Logo"
+            class="mobile-logo"
+          />
+        </header>
+
         <!-- 1. Dashboard Home -->
         <section id="dashboard" class="content-section">
           <header class="content-header">

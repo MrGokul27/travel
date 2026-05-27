@@ -72,6 +72,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Mobile Sidebar Toggle Logic
+  const sidebar = document.getElementById("dashboard-sidebar");
+  const overlay = document.getElementById("sidebar-overlay");
+  const toggleBtn = document.getElementById("sidebar-toggle-btn");
+  const closeBtn = document.getElementById("sidebar-close-btn");
+
+  const toggleSidebar = () => {
+    sidebar.classList.toggle("active");
+    overlay.classList.toggle("active");
+    document.body.style.overflow = sidebar.classList.contains("active")
+      ? "hidden"
+      : "";
+  };
+
+  if (toggleBtn) toggleBtn.addEventListener("click", toggleSidebar);
+  if (closeBtn) closeBtn.addEventListener("click", toggleSidebar);
+  if (overlay) overlay.addEventListener("click", toggleSidebar);
+
+  // Close sidebar when a nav link is clicked (mobile)
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth < 992 && sidebar.classList.contains("active")) {
+        toggleSidebar();
+      }
+    });
+  });
+
   // Logout Handler
   const logoutBtn = document.getElementById("logout-btn");
   if (logoutBtn) {
