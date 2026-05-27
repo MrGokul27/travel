@@ -242,19 +242,16 @@ document.addEventListener("DOMContentLoaded", () => {
       ".main-menu .menu-item.has-children > a",
     );
     hasChildrenLinks.forEach((link) => {
-      const arrowTrigger = link.querySelector(".dd-trigger");
-      if (arrowTrigger) {
-        arrowTrigger.addEventListener("click", (e) => {
-          if (window.innerWidth < 1200) {
-            e.preventDefault();
-            e.stopPropagation();
-            const parentLi = link.parentElement;
+      link.addEventListener("click", (e) => {
+        if (window.innerWidth < 1200) {
+          e.preventDefault();
+          e.stopPropagation();
+          const parentLi = link.parentElement;
 
-            // Toggle active state to slide open sub-menus
-            parentLi.classList.toggle("active");
-          }
-        });
-      }
+          // Toggle active state to slide open sub-menus
+          parentLi.classList.toggle("active");
+        }
+      });
     });
 
     // F. Sticky Header initialization
