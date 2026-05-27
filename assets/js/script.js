@@ -532,6 +532,92 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // ==========================================
+  // 9.5 ACCORDION ACTIVE STATE HANDLER
+  // ==========================================
+  const initAccordionActive = () => {
+    const accordionItems = document.querySelectorAll(".accordion-card");
+    accordionItems.forEach((item) => {
+      item.addEventListener("show.bs.collapse", () =>
+        item.classList.add("accordion-active"),
+      );
+      item.addEventListener("hide.bs.collapse", () =>
+        item.classList.remove("accordion-active"),
+      );
+    });
+  };
+
+  // ==========================================
+  // 9.6 NAME FIELD NUMERIC RESTRICTION
+  // ==========================================
+  const initNameInputRestriction = () => {
+    const nameInputs = document.querySelectorAll('input[name="name"]');
+    nameInputs.forEach((input) => {
+      // Block numeric keys during typing
+      input.addEventListener("keypress", (e) => {
+        if (/\d/.test(e.key)) e.preventDefault();
+      });
+      // Sanitize input to handle paste/drag-and-drop
+      input.addEventListener("input", function () {
+        this.value = this.value.replace(/\d/g, "");
+      });
+    });
+  };
+
+  // ==========================================
+  // 9.7 CUSTOM VALIDATION MESSAGES
+  // ==========================================
+  const initCustomValidationMessages = () => {
+    const inputs = document.querySelectorAll(
+      "input[required], select[required], textarea[required]",
+    );
+
+    inputs.forEach((input) => {
+      input.addEventListener("invalid", function () {
+        let fieldName =
+          this.getAttribute("placeholder") || this.name || "this field";
+
+        fieldName = fieldName.replace(/_/g, " ").toLowerCase();
+
+        if (this.validity.valueMissing) {
+          this.setCustomValidity(`Please fill in your ${fieldName}`);
+        } else if (this.validity.tooShort) {
+          this.setCustomValidity(
+            `Your ${fieldName} must be at least ${this.minLength} characters`,
+          );
+        } else if (this.validity.patternMismatch && this.type === "password") {
+          this.setCustomValidity(
+            "Password must contain at least one uppercase letter",
+          );
+        }
+      });
+
+      // Clear the custom message as soon as the user starts typing
+      input.addEventListener("input", function () {
+        this.setCustomValidity("");
+      });
+    });
+  };
+
+  // ==========================================
+  // 9.8 PASSWORD VISIBILITY TOGGLE
+  // ==========================================
+  const initPasswordToggle = () => {
+    const togglers = document.querySelectorAll(".password-toggle-icon");
+    togglers.forEach((toggler) => {
+      toggler.addEventListener("click", function () {
+        const input = this.closest(".position-relative").querySelector("input");
+        if (input.type === "password") {
+          input.type = "text";
+          this.classList.replace("fa-eye", "fa-eye-slash");
+        } else {
+          input.type = "password";
+          this.classList.replace("fa-eye-slash", "fa-eye");
+        }
+      });
+    });
+  };
+
+  // ==========================================
   // 7. ORCHESTRATE EXECUTION
   // ==========================================
   // Load dynamic sub-sections and chain menus initialization
@@ -549,6 +635,10 @@ document.addEventListener("DOMContentLoaded", () => {
         initScrollAnimations();
         initActiveMenuLink();
         initGalleryMasonry();
+        initAccordionActive();
+        initNameInputRestriction();
+        initCustomValidationMessages();
+        initPasswordToggle();
         initPlaceholderRedirects();
 
         // Initialize AOS Animations

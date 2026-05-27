@@ -3106,3 +3106,100 @@ select {
     font-size: 32px;
   }
 }
+
+/* ==========================================================
+   FAQ & ACCORDION ALIGNMENT FIXES
+   ========================================================== */
+.tripex-faq-sec {
+  padding-top: 50px;
+}
+
+.tripex-nav-tabs .nav-tabs {
+  border: none;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tripex-nav-tabs .nav-link {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 25px;
+  background-color: var(--white);
+  color: var(--dark);
+  border: 1px solid var(--light-green);
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-family: var(--font-heading);
+  transition: var(--transition-fast);
+}
+
+.tripex-nav-tabs .nav-link i {
+  font-size: 14px;
+  transition: var(--transition-fast);
+  opacity: 0.5;
+}
+
+.tripex-nav-tabs .nav-link.active,
+.tripex-nav-tabs .nav-link:hover {
+  background-color: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+}
+
+.tripex-nav-tabs .nav-link.active i,
+.tripex-nav-tabs .nav-link:hover i {
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+.accordion-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--light-green);
+  margin-bottom: 15px;
+  transition: var(--transition-smooth);
+}
+
+.accordion-card.accordion-active {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-card);
+}
+
+.accordion-title {
+  display: flex !important;
+  align-items: center;
+  gap: 15px;
+  padding: 20px 25px;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.accordion-content {
+  padding: 0 25px 25px 85px;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+@media (max-width: 767px) {
+  .accordion-content {
+    padding: 0 20px 20px 20px;
+  }
+}
+
+.password-toggle-icon {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: var(--text-muted);
+  z-index: 10;
+  transition: var(--transition-fast);
+}
+
+.password-toggle-icon:hover {
+  color: var(--primary);
+}
