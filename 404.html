@@ -35,10 +35,15 @@
                 name changed, or is temporarily unavailable. It seems you've
                 taken a wrong turn on your journey!
               </p>
-              <div class="error-button">
+              <div
+                class="error-button d-flex justify-content-center gap-3 flex-wrap"
+              >
                 <a href="index.html" class="theme-btn style-one">
                   <i class="fas fa-home me-2"></i> Back To Home
                 </a>
+                <button onclick="history.back()" class="theme-btn style-two">
+                  <i class="fas fa-arrow-left me-2"></i> Go Back
+                </button>
               </div>
             </div>
           </div>

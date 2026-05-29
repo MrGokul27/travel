@@ -218,19 +218,16 @@ select {
   box-shadow: 0 8px 20px rgba(115, 184, 74, 0.3);
 }
 
-.icon-btn i.far {
-  /* Ensure Font Awesome icon properties */
+.icon-btn i {
   font-family: "Font Awesome 6 Free" !important;
-  font-weight: 400 !important; /* 'far' implies regular weight */
-  color: var(--white) !important; /* Ensure visibility on dark backgrounds */
-  font-size: 18px !important; /* Default size for the icon */
-  line-height: 1 !important; /* Prevent extra spacing */
-  display: inline-block !important; /* Ensure it's rendered */
+  font-weight: 900 !important;
+  color: var(--white) !important;
+  font-size: 18px !important;
+  line-height: 1 !important;
+  display: inline-block !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-/* Specific style for icon-btn.style-one if needed, inheriting from base .icon-btn */
 
 .bg-orange {
   background-color: #f4a021 !important;
@@ -3018,6 +3015,20 @@ select {
   background: rgba(115, 184, 74, 0.03);
   border-radius: 50%;
   z-index: -1;
+}
+
+.login-auth-logo {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  z-index: 10;
+}
+
+@media (max-width: 767px) {
+  .login-auth-logo {
+    top: 20px;
+    left: 20px;
+  }
 }
 
 .contact-form-wrapper {
